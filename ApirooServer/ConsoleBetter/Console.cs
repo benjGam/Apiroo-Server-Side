@@ -13,7 +13,7 @@ namespace ConsoleBetter
 
         public static void Write(string output)
         {
-            AppendBuffers(output, true);
+            AppendBuffers(output, true); //Appending buffer
         }
         public static void WriteLine(string output, bool push = true)
         {
@@ -68,15 +68,15 @@ namespace ConsoleBetter
                 ConsoleKeyInfo KeyInfo = System.Console.ReadKey(true);
                 switch (KeyInfo.Key)
                 {
-                    case ConsoleKey.Enter:
+                    case ConsoleKey.Enter: //Key entered is Enter
                         Write("\n");
                         Continue = false;
                         break;
-                    case ConsoleKey.Backspace:
+                    case ConsoleKey.Backspace: //Key entered is Backspace
                         if (chars.Count - 1 >= 0)
                         {
-                            EraseSequence(new Point(System.Console.CursorLeft - 1, System.Console.CursorTop), new Size(1, 1));
-                            chars.RemoveAt(chars.Count - 1);
+                            EraseSequence(new Point(System.Console.CursorLeft - 1, System.Console.CursorTop), new Size(1, 1)); //Erasing console buffer view
+                            chars.RemoveAt(chars.Count - 1); //Removing char from reading buffer
                         }
                         break;
                     case ConsoleKey.Spacebar:
